@@ -20,7 +20,7 @@ def passcard_info_view(request, passcode):
         this_passcard_visits.append(
             {'entered_at': visit.entered_at,
              'duration': visit.format_duration(total_seconds),
-             'is_strange': is_strange
+             'is_strange': "Да" if is_strange else "Нет",
              },
         )
     context = {
