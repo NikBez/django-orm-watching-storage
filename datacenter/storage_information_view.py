@@ -3,6 +3,7 @@ from datacenter.models import Visit
 from django.shortcuts import render
 
 def storage_information_view(request):
+
     visits = Visit.objects.filter(leaved_at=None).select_related("passcard")
     non_closed_visits = []
 
@@ -17,6 +18,6 @@ def storage_information_view(request):
                                   'is_strange': "Да" if is_strange else "Нет",
                                   })
     context = {
-        'non_closed_visits': non_closed_visits,  # не закрытые посещения
+        'non_closed_visits': non_closed_visits,
     }
     return render(request, 'storage_information.html', context)

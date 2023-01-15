@@ -44,7 +44,7 @@ class Visit(models.Model):
         return '{:02}:{:02}:{:02}'.format(int(hours), int(minutes), int(seconds))
 
     def is_visit_long(self, seconds):
-        return True if seconds//3600 > 1 else False
+        return seconds//3600 > 1
 
 
 
