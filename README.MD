@@ -6,10 +6,36 @@ This application is used by bank security to control access to the vault
 pip install -r requirements.txt
 ````
 
+Create `.env ` using this template:
+
+````
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DEBUG=FALSE
+SECRET_KEY=[REPLACE_ME]
+INSTALLED_APPS=datacenter
+ALLOWED_HOSTS=*
+````
+DESCTIPTION:  
+DB_HOST - Database hostname   
+DB_PORT - Database port   
+DB_NAME - Database name   
+DB_USER - Database user name   
+DB_PASSWORD - Database user password   
+DEBUG - Debug mode  
+SECRET_KEY -  Key for password encryption  
+INSTALLED_APPS - list of registrated django apps  
+ALLOWED_HOSTS - list of allowed hosts  
+
+
 Run local server:
 ````
 python3 manage.py runserver
 ````
+
 Then app will be available in `127.0.0.1:8000/`
 
 ## How to use

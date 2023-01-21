@@ -1,8 +1,9 @@
 from dotenv import load_dotenv
+from environs import Env
+import os
 
 load_dotenv()
-
-import os
+env = Env()
 
 DATABASES = {
     'default': {
@@ -15,20 +16,15 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS = ['datacenter']
+INSTALLED_APPS = env.list("INSTALLED_APPS")
 
-SECRET_KEY = 'REPLACE_ME'
+SECRET_KEY = os.getenv('SECRET_KEY', default='')
 
-if os.environ['DEBUG'].lower() == 'true':
-    DEBUG = True
-elif os.environ['DEBUG'].lower() == 'false':
-    DEBUG = False
-else:
-    DEBUG = False
+DEBUG = env.bool('DEBUG')
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
