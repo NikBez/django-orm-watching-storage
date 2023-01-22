@@ -14,9 +14,9 @@ DB_PORT=
 DB_NAME=
 DB_USER=
 DB_PASSWORD=
+
 DEBUG=FALSE
 SECRET_KEY=[REPLACE_ME]
-INSTALLED_APPS=datacenter
 ALLOWED_HOSTS=*
 ````
 DESCTIPTION:  
@@ -26,8 +26,7 @@ DB_NAME - Database name
 DB_USER - Database user name   
 DB_PASSWORD - Database user password   
 DEBUG - Debug mode  
-SECRET_KEY -  Key for password encryption  
-INSTALLED_APPS - list of registrated django apps  
+SECRET_KEY -  Key for password encryption
 ALLOWED_HOSTS - list of allowed hosts  
 
 
